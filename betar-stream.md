@@ -3,7 +3,7 @@
 ঢাকা এএম (Dhaka AM)
 - ঢাকা-ক (৬৯৩ কিলোহার্জ): https://as1.digitalsynapsebd.com/proxy/bbdkka/stream
 - ঢাকা-খ (৮১৯ কিলোহার্জ): https://as1.digitalsynapsebd.com/proxy/bbdkkha/stream
-- বাণিজ্যিক কার্যক্রম (৬৩০ কিলোহার্জ) https://as1.digitalsynapsebd.com/proxy/bbdkcom/stream
+- বাণিজ্যিক কার্যক্রম (৬৩০ কিলোহার্জ): https://as1.digitalsynapsebd.com/proxy/bbdkcom/stream
 - বহির্বিশ্ব কার্যক্রম: https://as1.digitalsynapsebd.com/proxy/bbdkboh/stream
 
 
