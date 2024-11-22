@@ -1,4 +1,4 @@
-Title: লাইভ রেডিও (Live Radio)
+লাইভ রেডিও (Live Radio)
 Domain: https://betar.portal.gov.bd
 
 Division: ঢাকা এএম (Dhaka AM)
