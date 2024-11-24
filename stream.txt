@@ -1,5 +1,3 @@
-লাইভ রেডিও (Live Radio) Domain: https://betar.portal.gov.bd
-
 ঢাকা এএম (Dhaka AM)
 - ঢাকা-ক (৬৯৩ কিলোহার্জ): https://as1.digitalsynapsebd.com/proxy/bbdkka/stream
 - ঢাকা-খ (৮১৯ কিলোহার্জ): https://as1.digitalsynapsebd.com/proxy/bbdkkha/stream
