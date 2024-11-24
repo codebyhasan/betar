@@ -1,35 +1,50 @@
-// Array of radio streams
-const radioStations = [
-    { name: "Station 1", url: "http://stream-url-1.com" },
-    { name: "Station 2", url: "http://stream-url-2.com" },
-    { name: "Station 3", url: "http://stream-url-3.com" },
-    // Add all your 20+ stations here...
-];
-
-// DOM Elements
 const radioList = document.getElementById('radio-list');
 const radioPlayer = document.getElementById('radio-player');
 
-// Function to create radio station list
-function loadRadioStations() {
-    radioStations.forEach(station => {
-        const radioItem = document.createElement('div');
-        radioItem.className = 'radio-item';
-        radioItem.textContent = station.name;
+// Function to fetch and parse the streams.txt file
+async function loadRadioStations() {
+    try {
+        const response = await fetch('streams.txt');
+        const data = await response.text();
+        parseRadioData(data);
+    } catch (error) {
+        console.error('Error loading radio streams:', error);
+        radioList.innerHTML = '<p>Failed to load radio stations. Please try again later.</p>';
+    }
+}
 
-        radioItem.addEventListener('click', () => {
-            playStation(station.url);
-        });
+// Parse the content of streams.txt
+function parseRadioData(data) {
+    const lines = data.split('\n');
+    let currentCategory = '';
 
-        radioList.appendChild(radioItem);
+    lines.forEach(line => {
+        if (line.trim() === '') return; // Skip empty lines
+
+        if (!line.includes(':')) {
+            // If the line is a category
+            currentCategory = line.trim();
+            const categoryHeader = document.createElement('h3');
+            categoryHeader.textContent = currentCategory;
+            radioList.appendChild(categoryHeader);
+        } else {
+            // If the line is a station
+            const [title, url] = line.split(':').map(item => item.trim());
+            const radioItem = document.createElement('div');
+            radioItem.className = 'radio-item';
+            radioItem.textContent = title;
+
+            radioItem.addEventListener('click', () => playStation(url));
+            radioList.appendChild(radioItem);
+        }
     });
 }
 
-// Function to play the selected station
+// Play the selected station
 function playStation(url) {
     radioPlayer.src = url;
     radioPlayer.play();
 }
 
-// Load radio stations on page load
+// Load stations on page load
 loadRadioStations();
