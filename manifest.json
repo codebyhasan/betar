@@ -1,7 +1,7 @@
 {
   "name": "Betar Radio Player",
   "short_name": "Betar Radio",
-  "start_url": "/index.html",
+  "start_url": "/betar/index.html",
   "display": "standalone",
   "theme_color": "#006a4e",
   "background_color": "#006a4e",
