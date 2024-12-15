@@ -1,22 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Radio Streaming</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#006a4e">
+  <meta name="description" content="Stream Bangladesh Government's radio stations effortlessly with the Betar Radio Player. Open-source and user-friendly.">
+  <title>Betar Radio Player</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="betar.css">
+  
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => {
+          console.log("Service Worker registered successfully!");
+        })
+        .catch((error) => {
+          console.error("Service Worker registration failed:", error);
+        });
+    } else {
+      console.warn("Service Worker not supported in this browser.");
+    }
+  </script>
 </head>
 <body>
-    <header>
-        <h1>Live Radio Streaming</h1>
-    </header>
-    <main>
-        <div id="radio-list"></div>
-        <audio id="radio-player" controls></audio>
-    </main>
-    <footer>
-        <p>© 2024 Live Radio App</p>
-    </footer>
-    <script src="script.js"></script>
+  <!-- Header Section -->
+  <header>
+    <h1>Betar Radio Player</h1>
+    <p>Stream Bangladesh Government's Radio Stations Effortlessly</p>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div id="radio-stations">
+      <!-- Stations will be dynamically loaded by betar.js -->
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+      <p class="disclaimer">
+        <strong>Disclaimer:</strong> This website is <em>not affiliated</em> with the Bangladesh Government or 
+        <a href="https://betar.gov.bd" target="_blank">betar.gov.bd</a>. Any issues with radio streaming are beyond the scope of this project.
+        <br>
+        This is an <strong>open-source project</strong> aimed at simplifying access to Bangladesh Government’s radio stations.
+      </p>
+      <p class="copyright">
+        &copy; <span id="current-year"></span> Betar Radio Player. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Dynamically set the current year in the footer
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+  <script src="betar.js"></script>
 </body>
-</html>
+      </html>
+                           
